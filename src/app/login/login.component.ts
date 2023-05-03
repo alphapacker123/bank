@@ -6,20 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+uname:any
+psw:any
 
-data="you are awsome you can do it "
-pdata="property binding"
 
 constructor() { }
 
 ngOnInit():void{}
 
-login(){
-  alert("login clicked")
-}
-
-unamechange(event:any){
-  console.log(event.target.value);
+login(a:any,b:any){
+  this.uname=a.value
+  this.psw=b.value
+  console.log(this.uname,this.psw);
+  alert("log in clicked")
   
 }
 }
