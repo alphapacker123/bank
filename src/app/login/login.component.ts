@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicedataService } from '../service/servicedata.service';
 
 @Component({
   selector: 'app-login',
@@ -6,19 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-uname:any
-psw:any
 
+ accno:any
+ pword:any
 
-constructor() { }
+constructor(private ds:ServicedataService) { }
 
 ngOnInit():void{}
 
-login(a:any,b:any){
-  this.uname=a.value
-  this.psw=b.value
-  console.log(this.uname,this.psw);
-  alert("log in clicked")
-  
+login( ){
+  // alert(accno)
+alert(`${this.ds.checkdata()} ${this.ds.sdata}`)
+
 }
+
 }
